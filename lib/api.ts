@@ -65,11 +65,9 @@ export const getBathingWaterProfile = async (
   return data;
 };
 
-export const getSampleResults = async (
-  id: string,
-): Promise<BathingWaterResult> => {
+export const getResults = async (id: string): Promise<BathingWaterResult> => {
   const response = await fetch(
-    `${HAVVATTEN_BASE}/bathing-waters/${id}/sample-results`,
+    `${HAVVATTEN_BASE}/bathing-waters/${id}/results`,
   );
 
   if (!response.ok) {
