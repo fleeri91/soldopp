@@ -1,4 +1,5 @@
 import { BathingWaterProfile } from "@/types/BathingWaters/BathingWaterProfile";
+import { BathingWaterResult } from "@/types/BathingWaters/BathingWaterResult";
 import { BathingWaters } from "@/types/BathingWaters/BathingWaters";
 import { PointForecast } from "@/types/SMHI/PointForecast";
 import { WeatherParameter } from "@/types/SMHI/WeatherParameters";
@@ -61,5 +62,20 @@ export const getBathingWaterProfile = async (
   }
 
   const data: BathingWaterProfile = await response.json();
+  return data;
+};
+
+export const getSampleResults = async (
+  id: string,
+): Promise<BathingWaterResult> => {
+  const response = await fetch(
+    `${HAVVATTEN_BASE}/bathing-waters/${id}/sample-results`,
+  );
+
+  if (!response.ok) {
+    throw new Error(`HaV response was not ok: ${response.statusText}`);
+  }
+
+  const data: BathingWaterResult = await response.json();
   return data;
 };
