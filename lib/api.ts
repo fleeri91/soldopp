@@ -6,6 +6,9 @@ import { WeatherParameter } from "@/types/SMHI/WeatherParameters";
 const SMHI_BASE =
   "https://opendata-download-metfcst.smhi.se/api/category/snow1g/version/1/geotype/point";
 
+const HAVVATTEN_BASE =
+  "https://gw.havochvatten.se/external-public/bathing-waters/v2";
+
 export const getPointForecast = async (
   lat: number,
   lon: number,
@@ -36,9 +39,7 @@ export const getPointForecast = async (
 };
 
 export const getBathingWaters = async (): Promise<BathingWaters> => {
-  const response = await fetch(
-    `${process.env.EXPO_PUBLIC_HAV_API_URL}/bathing-waters`,
-  );
+  const response = await fetch(`${HAVVATTEN_BASE}/bathing-waters`);
 
   if (!response.ok) {
     throw new Error(`Network response was not ok: ${response.statusText}`);
@@ -52,7 +53,7 @@ export const getBathingWaterProfile = async (
   id: string,
 ): Promise<BathingWaterProfile> => {
   const response = await fetch(
-    `${process.env.EXPO_PUBLIC_HAV_API_URL}/bathing-waters/${id}/profiles`,
+    `${HAVVATTEN_BASE}/bathing-waters/${id}/profiles`,
   );
 
   if (!response.ok) {
