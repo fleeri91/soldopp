@@ -64,3 +64,21 @@ solScore = Math.max(
 - Startskärm = Rekommenderat (sol-rankad lista). Kommunbrowsing är sekundärvy.
 - 30-sekunders-beslutet är primärt use case — prioritera snabbhet framför fullständighet.
 - Ingen skuggberäkning, ingen trängseldata — ingår inte i scope.
+
+## UI & användarflöde
+
+**Inga val innan resultaten visas.** Rekommendationer renderas direkt med smarta defaults — aldrig en onboarding-modal eller konfigurationsskärm som första vy.
+
+**Defaults:**
+
+- Distansradie: 20 km
+- Vattentyp: alla (sjö + hav)
+
+**Filter** finns tillgängligt via filterikon i övre hörnet på rekommenderat-vyn. Användaren som inte bryr sig om vattentyp eller distans ska aldrig behöva interagera med det.
+
+Tillgängliga filterval:
+
+- Maxradie (5 / 10 / 20 / 50 km)
+- Vattentyp (Alla / Sjö / Hav)
+
+**GPS saknas eller nekas** → visa enkel kommunsökning som fallback. Funktionell fråga, inte preferensfråga — acceptabel friktion.

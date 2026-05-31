@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:api.anthropic.com)",
+      "Bash(gunzip)",
+      "Bash(tar -t)",
+      "Bash(grep -v \"/$\")",
+      "Bash(tar -xO soldopp/project/index.html)",
+      "Bash(tar -xO soldopp/chats/chat1.md)",
+      "Bash(tar -xO soldopp/project/variant-a.jsx)",
+      "Bash(tar -xO soldopp/project/variant-b.jsx)",
+      "Bash(tar -xO soldopp/project/variant-c.jsx)",
+      "Bash(tar -xO soldopp/project/data.js)"
+    ]
+  }
+}

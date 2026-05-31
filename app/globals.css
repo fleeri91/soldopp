@@ -1,15 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --sun: #F2BC2B;
+  --sun-deep: #D89A0E;
+  --sun-soft: #FBE89C;
+  --navy: #10243F;
+  --navy-2: #1C3759;
+  --cream: #F4ECDA;
+  --cream-2: #E8DDC2;
+  --sg-white: #FBFAF5;
+  --sg-ink: #0B1B30;
+  --sg-ink-2: #43526B;
+  --sg-ink-3: #7F8DA3;
+  --coral: #DA4D2E;
+  --coral-soft: #F6CFC2;
+  --sg-green: #226B49;
+  --sg-green-soft: #C4DCC9;
+  --sg-amber: #9B6308;
+  --sg-amber-soft: #F2DBA3;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-bricolage);
+  --font-mono: var(--font-space-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +32,40 @@
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--cream);
+  color: var(--sg-ink);
+  font-family: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sg-display {
+  font-family: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.sg-mono {
+  font-family: var(--font-space-mono), ui-monospace, "Courier New", monospace;
+}
+
+.sg-label {
+  font-family: var(--font-space-mono), ui-monospace, "Courier New", monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.sg-tab {
+  font-variant-numeric: tabular-nums;
 }
